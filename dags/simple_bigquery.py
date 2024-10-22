@@ -14,7 +14,7 @@ from airflow.providers.google.cloud.operators.bigquery import (
 yesterday = datetime.combine(datetime.today() - timedelta(1), datetime.min.time())
 
 DATASET = "simple_bigquery_example_dag"
-TABLE = "forestfires"
+TABLE = "sampledata"
 
 
 # Default arguments
@@ -50,15 +50,15 @@ with DAG(dag_id='simple_bigquery',
             {"name": "y", "type": "INTEGER", "mode": "NULLABLE"},
             {"name": "month", "type": "STRING", "mode": "NULLABLE"},
             {"name": "day", "type": "STRING", "mode": "NULLABLE"},
-            {"name": "ffmc", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "dmc", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "dc", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "isi", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "temp", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "rh", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "wind", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "rain", "type": "FLOAT", "mode": "NULLABLE"},
-            {"name": "area", "type": "FLOAT", "mode": "NULLABLE"},
+            {"name": "ffmc", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "dmc", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "dc", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "isi", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "temp", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "rh", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "wind", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "rain", "type": "INTEGER", "mode": "NULLABLE"},
+            {"name": "area", "type": "INTEGER", "mode": "NULLABLE"},
         ],
         gcp_conn_id='google_cloud_conn_id'
     )
