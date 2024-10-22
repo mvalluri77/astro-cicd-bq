@@ -1,0 +1,19 @@
+name: main pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ## Sets Deployment API credentials as environment variables
+  ASTRO_API_TOKEN: ${{ secrets.ASTRO_API_TOKEN_DEV }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to Astro
+      uses: astronomer/deploy-action@v0.7.1
+      with:
+        deployment-id: ${{ secrets.ASTRONOMER_DEPLOYMENT_ID_DEV }}
