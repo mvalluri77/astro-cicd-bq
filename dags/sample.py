@@ -27,7 +27,7 @@ default_args = {
 }
 
 # DAG definitions
-with DAG(dag_id='simple_bigquery',
+with DAG(dag_id='simple_bigquery122',
          catchup=False,
          schedule_interval=timedelta(days=1),
          description="Example DAG showcasing loading and data quality checking with BigQuery.",
